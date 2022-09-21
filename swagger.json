@@ -1,0 +1,534 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Swagger-gadibiz-node",
+    "description": "Swagger Api Docs For CrossRoads.",
+    "contact": {
+      "email": "zafar1219@gmail.com"
+    }
+  },
+
+  "schemes": ["http", "https"],
+
+  "paths": {
+    "/api/register": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "user registration",
+        "description": "",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "first_name_v": {
+                  "type": "string",
+                  "example": "zafar"
+                },
+                "last_name_v": {
+                  "type": "string",
+                  "example": "iqbal"
+                },
+                "father_name_v": {
+                  "type": "string",
+                  "example": "fathers name"
+                },
+                "sos_person_name_v": {
+                  "type": "string",
+                  "example": "name"
+                },
+                "sos_person_mobile_number_v": {
+                  "type": "string",
+                  "example": "name"
+                },
+                "email_id_v": {
+                  "type": "string",
+                  "example": "zafar@gmail.com"
+                },
+                "country_code_v": {
+                  "type": "string",
+                  "example": "+91"
+                },
+                "city_v": {
+                  "type": "string",
+                  "example": "srinagar"
+                },
+                "landmark_v": {
+                  "type": "string",
+                  "example": "land mark "
+                },
+                "location_v": {
+                  "type": "string",
+                  "example": "location"
+                },
+                "address_v": {
+                  "type": "string",
+                  "example": "address"
+                },
+                "pin_v": {
+                  "type": "string",
+                  "example": "pin"
+                },
+                "prmnt_city_v": {
+                  "type": "string",
+                  "example": "city"
+                },
+                "prmnt_landmark_v": {
+                  "type": "string",
+                  "example": "landmark"
+                },
+                "prmnt_location_v": {
+                  "type": "string",
+                  "example": "location"
+                },
+                "prmnt_address_v": {
+                  "type": "string",
+                  "example": "address"
+                },
+                "prmnt_pin_v": {
+                  "type": "string",
+                  "example": "pin"
+                },
+                "mobile_number_v": {
+                  "type": "string",
+                  "example": "mobile number"
+                },
+                "password_v": {
+                  "type": "string",
+                  "example": "abc342"
+                },
+                "user_role_v": {
+                  "type": "string",
+                  "example": "1"
+                },
+                "gender_v": {
+                  "type": "string",
+                  "example": "male"
+                },
+                "blood_group_v": {
+                  "type": "string",
+                  "example": "blood"
+                },
+                "profile_picture_v": {
+                  "type": "string",
+                  "example": "base64String"
+                }
+              }
+            }
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/update-user-details": {
+      "post": {
+        "tags": ["User"],
+        "summary": "user registration",
+        "description": "",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "header",
+            "type": "string",
+            "name": "auth-Token",
+            "description": "Access Token",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "first_name_v": {
+                  "type": "string",
+                  "example": "zafar"
+                },
+                "last_name_v": {
+                  "type": "string",
+                  "example": "iqbal"
+                },
+                "father_name_v": {
+                  "type": "string",
+                  "example": "fathers name"
+                },
+                "sos_person_name_v": {
+                  "type": "string",
+                  "example": "name"
+                },
+                "sos_person_mobile_number_v": {
+                  "type": "string",
+                  "example": "name"
+                },
+                "email_id_v": {
+                  "type": "string",
+                  "example": "zafar@gmail.com"
+                },
+
+                "city_v": {
+                  "type": "string",
+                  "example": "srinagar"
+                },
+
+                "landmark_v": {
+                  "type": "string",
+                  "example": "land mark "
+                },
+                "location_v": {
+                  "type": "string",
+                  "example": "location"
+                },
+                "address_v": {
+                  "type": "string",
+                  "example": "address"
+                },
+                "pin_v": {
+                  "type": "string",
+                  "example": "pin"
+                },
+                "prmnt_city_v": {
+                  "type": "string",
+                  "example": "city"
+                },
+                "prmnt_landmark_v": {
+                  "type": "string",
+                  "example": "landmark"
+                },
+                "prmnt_location_v": {
+                  "type": "string",
+                  "example": "location"
+                },
+                "prmnt_address_v": {
+                  "type": "string",
+                  "example": "address"
+                },
+                "prmnt_pin_v": {
+                  "type": "string",
+                  "example": "pin"
+                },
+
+                "blood_group_v": {
+                  "type": "string",
+                  "example": "blood"
+                },
+                "profile_picture_v": {
+                  "type": "string",
+                  "example": "profile picture"
+                }
+              }
+            }
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/register-by-admin": {
+      "post": {
+        "tags": ["Admin"],
+        "summary": "user registration by admin",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "header",
+            "type": "string",
+            "name": "auth-Token",
+            "description": "Access Token",
+            "required": true
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fName": {
+                  "type": "string",
+                  "example": "Denarys"
+                },
+                "lName": {
+                  "type": "string",
+                  "example": "Targerian"
+                },
+                "father_name_v": {
+                  "type": "string",
+                  "example": "fathers name"
+                },
+                "sos_person_name_v": {
+                  "type": "string",
+                  "example": "sos"
+                },
+                "sos_person_mobile_number_v": {
+                  "type": "string",
+                  "example": "1020304050"
+                },
+                "email": {
+                  "type": "string",
+                  "example": "Denarys99@Got.com"
+                },
+                "city_v": {
+                  "type": "string",
+                  "example": "city"
+                },
+
+                "landmark_v": {
+                  "type": "string",
+                  "example": "landmark"
+                },
+                "location_v": {
+                  "type": "string",
+                  "example": "location"
+                },
+                "address_v": {
+                  "type": "string",
+                  "example": "address"
+                },
+                "pin_v": {
+                  "type": "string",
+                  "example": "pin"
+                },
+                "prmnt_city_v": {
+                  "type": "string",
+                  "example": "permanent city"
+                },
+
+                "prmnt_landmark_v": {
+                  "type": "string",
+                  "example": "landmark"
+                },
+                "prmnt_location_v": {
+                  "type": "string",
+                  "example": "location"
+                },
+                "prmnt_address_v": {
+                  "type": "string",
+                  "example": "address"
+                },
+                "prmnt_pin_v": {
+                  "type": "string",
+                  "example": "pin"
+                },
+                "country_code": {
+                  "type": "string",
+                  "example": "+91"
+                },
+                "city": {
+                  "type": "string",
+                  "example": "delhi"
+                },
+                "mobile_number": {
+                  "type": "string",
+                  "example": "919876789098"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "user_role_id": {
+                  "type": "integer",
+                  "example": "3"
+                },
+                "blood_group_v": {
+                  "type": "string",
+                  "example": "blood group"
+                },
+                "profile_picture_v": {
+                  "type": "string",
+                  "example": "base64String"
+                },
+                "gender": {
+                  "type": "string",
+                  "example": "Female"
+                }
+              }
+            }
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/login-with-email": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "Login with email and password",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string",
+                  "example": "zafar@gmail.com"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "string"
+                }
+              }
+            }
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "404": {
+            "description": "not found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/login-otp": {
+      "get": {
+        "tags": ["Auth"],
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "query",
+            "type": "string",
+            "name": "mobile_number",
+            "description": "mobile_number",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/verify-otp": {
+      "post": {
+        "tags": ["Auth"],
+        "summary": "verify otp",
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "user information",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mobile_number": {
+                  "type": "string",
+                  "example": "9154896523"
+                },
+                "OTP": {
+                  "type": "string",
+                  "example": "874563"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/user-profile": {
+      "get": {
+        "tags": ["User"],
+
+        "consumes": ["application/json"],
+        "produces": ["application/json"],
+        "parameters": [
+          {
+            "in": "header",
+            "type": "string",
+            "name": "auth-Token",
+            "description": "Access Token",
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "403": {
+            "description": "Error"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
